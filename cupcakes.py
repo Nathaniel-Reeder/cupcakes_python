@@ -73,7 +73,7 @@ def append_to_csv(file, cupcake):
         else:
             writer.writerow({"size": cupcake.size, "name": cupcake.name, "price": cupcake.price, "flavor": cupcake.flavor, "frosting": cupcake.frosting, "sprinkles": cupcake.sprinkles})
 
-
+#testing functions
 
 append_to_csv('sample.csv', cupcake_1)
 read_csv('sample.csv')
