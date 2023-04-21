@@ -1,0 +1,98 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.title h1{
+    font-size: 40px;
+    font-family: 'Lato', sans-serif;
+    margin-top:1em;
+    margin-left: auto;
+    margin-right:auto;
+    text-align: center;
+
+    /* Stryling the text and giving it gradiant */
+    color:#ffffff;
+    background-clip: text;
+    background: -webkit-linear-gradient(#eee, #777777);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+
+    /* Make sure text is infront of background images */
+    display:block;
+    position: relative;
+    z-index: 3;
+}
+
+.title a {
+    font-family: 'Lato', sans-serif;
+    margin-top:5em;
+    margin-left: auto;
+    margin-right:auto;
+    text-align: center;
+    padding: 10px;
+
+    /* Stryling the text and giving it gradiant */
+    color:#ffffff;
+    background: -webkit-linear-gradient(#eee, #333);
+    text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+    border-radius: 50%;
+    max-width: 14%;
+    height: 10%;
+    text-decoration: none;
+    width: 14%;
+   
+    /* Make sure text is infront of background images */
+    display:block;
+    position: relative;
+    z-index: 3;    
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+.stars, .twinkling {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.stars {
+  background:#000 url(stars.png) repeat top center;
+  z-index:0;
+}
+
+.twinkling{
+  background:transparent url(twinkling.png) repeat top center;
+  z-index:1;
+  animation:move-twink-back 200s linear infinite;
+}
+
+nav {
+    display: flex;
+}
+
+ul {
+  color: white;
+  font-family: 'Lato', sans-serif;
+
+  /* margin-left: 10%; */
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right:auto;
+  text-align: center;
+
+  /* Make sure text is infront of background images */
+  display:block;
+  position: relative;
+  z-index: 3;
+}
