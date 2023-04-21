@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
 }
+
 .title h1{
     font-size: 40px;
     font-family: 'Lato', sans-serif;
@@ -35,10 +36,7 @@
 
     /* Stryling the text and giving it gradiant */
     color:#ffffff;
-    /* background-clip: text; */
     background: -webkit-linear-gradient(#eee, #333);
-    /* -webkit-background-clip: text; */
-    /* -webkit-text-fill-color: transparent; */
     text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
     border-radius: 50%;
     max-width: 14%;
@@ -81,4 +79,20 @@
 
 nav {
     display: flex;
+}
+
+ul {
+  color: white;
+  font-family: 'Lato', sans-serif;
+
+  /* margin-left: 10%; */
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right:auto;
+  text-align: center;
+
+  /* Make sure text is infront of background images */
+  display:block;
+  position: relative;
+  z-index: 3;
 }

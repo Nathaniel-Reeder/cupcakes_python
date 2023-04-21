@@ -75,5 +75,11 @@ def append_to_csv(file, cupcake):
 
 #testing functions
 
-append_to_csv('sample.csv', cupcake_1)
-read_csv('sample.csv')
+# append_to_csv('sample.csv', cupcake_1)
+# read_csv('sample.csv')
+
+def get_cupcakes(file):
+    with open(file) as csvfile:
+        reader = csv.DictReader(csvfile)
+        reader = list(reader)
+        return reader
