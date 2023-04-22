@@ -1,5 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-	
+	<ul>
+        
+        <li>
+            <h3>{{cupcake["name"]}}</h3>
+            <br>
+            <h4>Flavor: {{ cupcake["flavor"] }}</h4>
+            <br>
+            <h4>Frosting: {{ cupcake["frosting"] }}</h4>
+            <br>
+            {% if cupcake['sprinkles'] != [] %}
+            <h4>Sprinkles: {{cupcake['sprinkles']}}</h4>
+            <br>
+            {% endif %}
+            {% if cupcake["filling"] %}
+            <h4>Filling: {{cupcake['filling']}}</h4>
+            <br>
+            {% endif %}
+            <h4><b>Price: ${{ cupcake["price"] }}</b></h4>
+            <br></br>
+        </li>
+    </ul>
 {% endblock %}

@@ -12,7 +12,7 @@
             <h4>Frosting: {{ cupcake["frosting"] }}</h4>
             <h4><b>Price: ${{ cupcake["price"] }}</b></h4>
             <br></br>
-            <a href="{{url_for('remove_from_order', name=cupcake['name'])}}">
+            <a href="{{url_for('remove_from_order', id=cupcake['id'])}}">
                 <button>Remove From Order</button>
             </a>
         </li>
