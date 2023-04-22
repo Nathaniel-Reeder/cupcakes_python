@@ -2,7 +2,7 @@
 
 {% block content %}
 	
-<ul>
+<ul class="cupcake_list">
     
     {% for cupcake in cupcakes %}
         <li>
@@ -11,6 +11,9 @@
             <h4>Frosting: {{ cupcake["frosting"] }}</h4>
             <h4><b>Price: ${{ cupcake["price"] }}</b></h4>
             <br></br>
+            <a href="{{url_for('add_cupcake', name=cupcake['name'])}}">
+                <button>Add to Cart</button>
+            </a>
         </li>
     {% endfor %}
 

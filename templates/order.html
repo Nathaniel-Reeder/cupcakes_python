@@ -1,5 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-	
+    <h3>Current Order:</h3>
+    
+    <h4>Order Total: ${{order_total}}</h4>
+	<ul>
+        {% for cupcake in cupcakes %}
+        <li>
+            <h3>{{cupcake["name"]}}</h3>
+            <h4>Flavor: {{ cupcake["flavor"] }}</h4>
+            <h4>Frosting: {{ cupcake["frosting"] }}</h4>
+            <h4><b>Price: ${{ cupcake["price"] }}</b></h4>
+            <br></br>
+            <a href="{{url_for('remove_from_order', name=cupcake['name'])}}">
+                <button>Remove From Order</button>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock %}

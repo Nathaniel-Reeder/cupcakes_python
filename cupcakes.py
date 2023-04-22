@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 import csv
 from pprint import pprint
+import pandas as pd
 
 class Cupcake(ABC):
     size = "regular"
@@ -83,3 +84,27 @@ def get_cupcakes(file):
         reader = csv.DictReader(csvfile)
         reader = list(reader)
         return reader
+    
+def find_cupcake(file, name):
+    for cupcake in get_cupcakes(file):
+        if cupcake['name'] == name:
+            return cupcake
+    return None
+    
+def add_cupcake_dictionary(file, cupcake):
+    with open(file, 'a', newline="\n") as csvfile:
+        fieldnames = ['size', 'name', 'price', 'flavor', 'frosting', 'sprinkles', 'filling']
+        print(cupcake)
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writerow(cupcake)
+
+def order_price(file):
+    price = 0
+    for cupcake in get_cupcakes(file):
+        price += float(cupcake['price'])
+    return round(price, 2)
+
+def remove_cupcake(file, cupcake):
+    df = pd.read_csv(file)
+    df = df[df.name != cupcake['name']]
+    df.to_csv(file, index=False)
